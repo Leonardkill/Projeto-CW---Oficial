@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.add(R.id.container_maps , new maps_activity() , "MapsFragment");
-        transaction.commitAllowingStateLoss();
+        transaction.commit();
 
     }
 
@@ -74,6 +74,14 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
+    @Override
+    protected void onResume() {
 
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.container_maps , new maps_activity() , "MapsFragment");
+        transaction.commit();
+
+        super.onResume();
+    }
 }
 
