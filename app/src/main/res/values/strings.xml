@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Projeto Clean World</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Clean world</string>
+    <string name="nav_header_subtitle">clean.world@cw.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_eventos">Eventos</string>
+    <string name="menu_ranking">Ranking</string>
+    <string name="menu_usuario">Usuário</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+</resources>
