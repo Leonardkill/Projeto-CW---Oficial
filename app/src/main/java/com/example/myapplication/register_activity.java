@@ -70,15 +70,17 @@ public class register_activity extends AppCompatActivity {
                 else {
                     Toast.makeText(register_activity.this , "Ocorreu um erro!" , Toast.LENGTH_SHORT).show();
                 }
-                tvRegistrar.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent i = new Intent(register_activity.this,login_activity.class);
-                        startActivity(i);
-                    }
-                });
+
             }
 
+        });
+
+        tvRegistrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(register_activity.this,login_activity.class);
+                startActivity(i);
+            }
         });
     }
 }
