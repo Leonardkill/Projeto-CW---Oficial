@@ -36,9 +36,53 @@ public class maps_activity extends SupportMapFragment implements OnMapReadyCallb
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng tucuruvi = new LatLng(-23.480074615926885 , -46.60350501537323 );
+        MarkerOptions marker = new MarkerOptions();
+        marker.position(tucuruvi);
+        marker.title("Ponto de coleta Tucuruvi");
+        mMap.addMarker(marker);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(tucuruvi));
+
+        LatLng belem = new LatLng(-23.539753417272976 , -46.594905853271484 );
+        marker.position(belem);
+        marker.title("Marcador Belem ");
+        mMap.addMarker(marker);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(belem));
+
+        LatLng bras = new LatLng(-23.544159878865862 , -46.616835594177246 );
+        marker.position(bras);
+        marker.title("Marcador Brás ");
+        mMap.addMarker(marker);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(bras));
+
+        LatLng liberdade = new LatLng(-23.568078093330698 , -46.63155555725098 );
+        marker.position(liberdade);
+        marker.title("Marcador Liberdade ");
+        mMap.addMarker(marker);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(liberdade));
+
+        LatLng vguilherme = new LatLng(-23.520237312986335 , -46.61069869995117 );
+        marker.position(vguilherme);
+        marker.title("Marcador Vila Guilherme ");
+        mMap.addMarker(marker);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(vguilherme));
+
+        LatLng mooca = new LatLng(-23.56367243356796 , -46.59524917602539 );
+        marker.position(mooca);
+        marker.title("Marcador Mooca ");
+        mMap.addMarker(marker);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(mooca));
+
+        LatLng pinheiros = new LatLng(-23.56776340824804 , -46.6838264465332 );
+        marker.position(pinheiros);
+        marker.title("Marcador Pinheiros ");
+        mMap.addMarker(marker);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(pinheiros));
+
+        LatLng bfunda = new LatLng(-23.52653314675258 , -46.67558670043945 );
+        marker.position(bfunda);
+        marker.title("Marcador Barra Funda ");
+        mMap.addMarker(marker);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(bfunda));
     }
 }

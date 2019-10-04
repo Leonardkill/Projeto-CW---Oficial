@@ -10,7 +10,7 @@ public class HomeViewModel extends ViewModel {
 
     public HomeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Essa é a tela principal");
+        mText.setValue("Localize o ponto mais próximo a você");
     }
 
     public LiveData<String> getText() {
