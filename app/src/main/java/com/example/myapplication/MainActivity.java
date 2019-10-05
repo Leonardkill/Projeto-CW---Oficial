@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -7,6 +8,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import android.os.PersistableBundle;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -32,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private FragmentManager fragmentManager;
+
+    public static Intent createIntent(Context context) {
+        return new Intent(context, MainActivity.class);
+    }
 
 
     @Override
@@ -82,6 +88,22 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
 
         super.onResume();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.sair:
+                FirebaseAuth.getInstance().signOut();
+                Intent sair =new Intent(this , login_activity.class);
+                startActivity(sair);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 }
 

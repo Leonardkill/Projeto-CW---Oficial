@@ -23,6 +23,7 @@
             android:layout_marginEnd="8dp"
             android:textAlignment="center"
             android:textSize="35sp"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -44,14 +45,14 @@
                     android:id="@+id/imageView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_span="0"
-                    app:srcCompat="@drawable/usuario_icone_verde" />
+                    app:srcCompat="@drawable/star_ranking" />
 
 
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Leonardo"
 
                     android:textSize="30sp" />
@@ -60,6 +61,7 @@
                     android:id="@+id/textView3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Pontuação : 100"
                     android:textSize="25sp"
 
@@ -79,6 +81,7 @@
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Rafael"
                     android:textSize="30sp"
 
@@ -88,6 +91,7 @@
                     android:id="@+id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Pontuação : 85"
                     android:textSize="25sp"
 
@@ -107,6 +111,7 @@
                     android:id="@+id/textView8"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Thalyta"
                     android:textSize="30sp"
 
@@ -116,6 +121,7 @@
                     android:id="@+id/textView9"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Pontuação : 75"
                     android:textSize="25sp"
 
@@ -134,6 +140,7 @@
                     android:id="@+id/textView6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Thiago"
                     android:textSize="30sp"
 
@@ -143,6 +150,7 @@
                     android:id="@+id/textView7"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Pontuação : 70"
                     android:textSize="25sp"
 
@@ -162,6 +170,7 @@
                     android:id="@+id/txtView10"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Valter"
                     android:textSize="30sp"
 
@@ -171,6 +180,7 @@
                     android:id="@+id/txtView11"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Pontuação : 63"
                     android:textSize="25sp"
 
@@ -190,6 +200,7 @@
                     android:id="@+id/txtView12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Quitéria"
                     android:textSize="30sp"
 
@@ -199,6 +210,7 @@
                     android:id="@+id/txtView13"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Pontuação : 60"
                     android:textSize="25sp"
 
@@ -218,7 +230,8 @@
                     android:id="@+id/txtView14"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Valter"
+                    android:textColor="@color/verde_clean"
+                    android:text="Gustavo"
                     android:textSize="30sp"
 
                     />
@@ -227,6 +240,7 @@
                     android:id="@+id/txtView15"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Pontuação : 55"
                     android:textSize="25sp"
 
@@ -246,6 +260,7 @@
                     android:id="@+id/txtView16"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Rogério"
                     android:textSize="30sp"
 
@@ -255,6 +270,7 @@
                     android:id="@+id/txtView17"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Pontuação : 50"
                     android:textSize="25sp"
 
@@ -274,6 +290,7 @@
                     android:id="@+id/txtView18"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Luís"
                     android:textSize="30sp"
 
@@ -283,6 +300,7 @@
                     android:id="@+id/txtView19"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Pontuação : 46"
                     android:textSize="25sp"
 
@@ -301,6 +319,7 @@
                 <TextView
                     android:id="@+id/txtView20"
                     android:layout_width="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:layout_height="match_parent"
                     android:text="Fátima"
                     android:textSize="30sp"
@@ -311,6 +330,7 @@
                     android:id="@+id/txtView21"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Pontuação : 39"
                     android:textSize="25sp"
 
@@ -329,6 +349,7 @@
                 <TextView
                     android:id="@+id/txtView22"
                     android:layout_width="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:layout_height="match_parent"
                     android:text="Ronqui"
                     android:textSize="30sp"
@@ -339,6 +360,7 @@
                     android:id="@+id/txtView23"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Pontuação : 30"
                     android:textSize="25sp"
 
@@ -358,6 +380,7 @@
                     android:id="@+id/txtView24"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Guilherme"
                     android:textSize="30sp"
 
@@ -367,6 +390,7 @@
                     android:id="@+id/txtView25"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Pontuação : 22"
                     android:textSize="25sp"
 
@@ -386,6 +410,7 @@
                     android:id="@+id/txtView26"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Beloti"
                     android:textSize="30sp"
 
@@ -395,6 +420,7 @@
                     android:id="@+id/txtView27"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/verde_clean"
                     android:text="Pontuação : 15"
                     android:textSize="25sp"
 
