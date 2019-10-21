@@ -13,9 +13,11 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class login_activity extends AppCompatActivity {
     EditText emailId, password;
@@ -23,6 +25,9 @@ public class login_activity extends AppCompatActivity {
     TextView tvRegistrar;
     FirebaseAuth mFirebaseAuth;
     private  FirebaseAuth.AuthStateListener mAuthStateListener;
+    private FirebaseDatabase mRootRef;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,7 @@ public class login_activity extends AppCompatActivity {
         password = findViewById(R.id.edit_senha);
         btnLogar = findViewById(R.id.btn_entrar);
         tvRegistrar = findViewById(R.id.txt_login);
+
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
@@ -47,6 +53,8 @@ public class login_activity extends AppCompatActivity {
                 else {
                     Toast.makeText(login_activity.this,"Por favor logue" , Toast.LENGTH_SHORT).show();
                 }
+
+
 
             }
         };
