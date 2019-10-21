@@ -10,7 +10,7 @@ public class UsuarioViewModel extends ViewModel {
 
     public UsuarioViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is tools fragment");
+        mText.setValue("Meu Usuário");
     }
 
     public LiveData<String> getText() {

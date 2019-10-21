@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/roxo_clean"
+        android:background="@color/preto"
         >
 
         <TextView
@@ -27,8 +27,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:background="@drawable/backgroud_main"
+            android:background="@color/preto"
             android:text="Ranking"
+            android:textColor="@color/cinza"
             />
 
 
@@ -403,6 +404,7 @@
                     android:id="@+id/imageView13"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     app:srcCompat="@drawable/usuario_icone_verde" />
 
 

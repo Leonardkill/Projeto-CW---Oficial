@@ -1,19 +1,50 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 
-public class maps_activity extends SupportMapFragment implements OnMapReadyCallback {
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Map;
+
+public class maps_activity extends SupportMapFragment implements OnMapReadyCallback
+{
 
     private GoogleMap mMap;
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -21,6 +52,7 @@ public class maps_activity extends SupportMapFragment implements OnMapReadyCallb
 
         getMapAsync(this);
     }
+
 
 
     /**
@@ -35,6 +67,7 @@ public class maps_activity extends SupportMapFragment implements OnMapReadyCallb
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        //Marcadores
 
         LatLng tucuruvi = new LatLng(-23.480074615926885 , -46.60350501537323 );
         MarkerOptions marker = new MarkerOptions();
