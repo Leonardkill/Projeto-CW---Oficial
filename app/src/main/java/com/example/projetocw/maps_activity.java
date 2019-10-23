@@ -3,6 +3,7 @@ package com.example.projetocw;
 import androidx.annotation.NonNull;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.projetocw.Classes.PontoColeta;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -25,31 +26,12 @@ public class maps_activity extends SupportMapFragment implements OnMapReadyCallb
 
     private GoogleMap mMap;
 
-    private List<PontoColeta> lista = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getMapAsync(this);
-
-        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("PontoColeta");
-
-        myRef.addListenerForSingleValueEvent( new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                lista.clear();
-                for (DataSnapshot data: dataSnapshot.getChildren()){
-                    PontoColeta pontoColeta = data.getValue(PontoColeta.class);
-                    lista.add(pontoColeta);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
 
     }
 
@@ -69,14 +51,11 @@ public class maps_activity extends SupportMapFragment implements OnMapReadyCallb
         mMap = googleMap;
         //Marcadores
 
-        for (PontoColeta it : lista) {
-            LatLng position = new LatLng(it.getLatitude(), it.getLongitude());
-            MarkerOptions marker = new MarkerOptions();
-            marker.position(position);
-            marker.title(it.getNomePontoColeta());
-            mMap.addMarker(marker);
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(position));
-        }
+        Toast.makeText(getContext(),"Teste",Toast.LENGTH_SHORT).show();
 
+        // Add a marker in Sydney and move the camera
+        LatLng sydney = new LatLng(-34, 151);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 }

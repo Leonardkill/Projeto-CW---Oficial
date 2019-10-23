@@ -45,13 +45,8 @@ public class login_activity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(mFirebaseUser != null) {
-
-                    Bundle params = new Bundle();
-                    params.putString("UID", mFirebaseUser.getUid());
-
                     Toast.makeText(login_activity.this,"Você logou com sucesso!" , Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(login_activity.this,MainActivity.class);
-                    i.putExtras(params);
                     startActivity(i);
                 }
                 else {
