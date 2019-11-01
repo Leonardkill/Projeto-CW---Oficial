@@ -3,6 +3,7 @@ package com.example.projetocw;
 import androidx.annotation.NonNull;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.projetocw.Classes.PontoColeta;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -33,16 +34,16 @@ public class maps_activity extends SupportMapFragment implements OnMapReadyCallb
 
         getMapAsync(this);
 
-        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("PontoColeta");
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("PontoColeta").child("-LrknSc_4S9joTy0VI0t");
 
         myRef.addListenerForSingleValueEvent( new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                lista.clear();
-                for (DataSnapshot data: dataSnapshot.getChildren()){
-                    PontoColeta pontoColeta = data.getValue(PontoColeta.class);
-                    lista.add(pontoColeta);
-                }
+                String name = dataSnapshot.child("nomePontoColeta").getValue(String.class);
+                double latt = dataSnapshot.child("latitude").getValue(Double.class);
+                double lng = dataSnapshot.child("longitude").getValue(Double.class);
+                mMap.addMarker(new MarkerOptions().position(new LatLng(latt, lng)).title(name));
+
             }
 
             @Override
@@ -69,14 +70,8 @@ public class maps_activity extends SupportMapFragment implements OnMapReadyCallb
         mMap = googleMap;
         //Marcadores
 
-        for (PontoColeta it : lista) {
-            LatLng position = new LatLng(it.getLatitude(), it.getLongitude());
-            MarkerOptions marker = new MarkerOptions();
-            marker.position(position);
-            marker.title(it.getNomePontoColeta());
-            mMap.addMarker(marker);
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(position));
-        }
+        Toast.makeText(getContext(),"Teste",Toast.LENGTH_SHORT).show();
+
 
     }
 }
