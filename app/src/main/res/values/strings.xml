@@ -19,5 +19,5 @@
     <string name="your_name">Nome completo</string>
     <string name="endereco">Informe seu endereço</string>
     <string name="dt_nascimento">Informe sua data de nascimento</string>
-    <string name="email">Inform seu email</string>
+    <string name="email">Informe seu email</string>
 </resources>

@@ -3,6 +3,7 @@ package com.example.projetocw;
 import androidx.annotation.NonNull;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.projetocw.Classes.PontoColeta;
@@ -21,12 +22,13 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.content.ContentValues.TAG;
+
 public class maps_activity extends SupportMapFragment implements OnMapReadyCallback
 {
 
     private GoogleMap mMap;
 
-    private List<PontoColeta> lista = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,23 +36,6 @@ public class maps_activity extends SupportMapFragment implements OnMapReadyCallb
 
         getMapAsync(this);
 
-        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("PontoColeta").child("-LrknSc_4S9joTy0VI0t");
-
-        myRef.addListenerForSingleValueEvent( new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String name = dataSnapshot.child("nomePontoColeta").getValue(String.class);
-                double latt = dataSnapshot.child("latitude").getValue(Double.class);
-                double lng = dataSnapshot.child("longitude").getValue(Double.class);
-                mMap.addMarker(new MarkerOptions().position(new LatLng(latt, lng)).title(name));
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
 
     }
 
@@ -68,10 +53,37 @@ public class maps_activity extends SupportMapFragment implements OnMapReadyCallb
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
         //Marcadores
 
         Toast.makeText(getContext(),"Teste",Toast.LENGTH_SHORT).show();
 
 
+        // Add a marker in Sydney and move the camera
+        LatLng sydney = new LatLng(-34, 151);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    double posicao_latitude = dataSnapshot.child("PontoColeta").child("-LrknSc_4S9joTy0VI0t").child("latitude").getValue(Double.class);
+                    double posicao_longitude = dataSnapshot.child("PontoColeta").child("-LrknSc_4S9joTy0VI0t").child("longitude").getValue(Double.class);
+                    LatLng tucuruvi = new LatLng(posicao_latitude,posicao_longitude);
+                    mMap.addMarker(new MarkerOptions().position(tucuruvi).title("Marcador Tucuruvi"));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(tucuruvi,18));
+                }
+                else {
+                    Log.e(TAG,"onDataChange: no Data" );
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }
