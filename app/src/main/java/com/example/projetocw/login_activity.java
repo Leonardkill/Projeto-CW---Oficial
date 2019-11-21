@@ -50,7 +50,7 @@ public class login_activity extends AppCompatActivity {
                     startActivity(i);
                 }
                 else {
-                    Toast.makeText(login_activity.this,"Por favor logue" , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(login_activity.this,"Falha no Login" , Toast.LENGTH_SHORT).show();
                 }
 
 

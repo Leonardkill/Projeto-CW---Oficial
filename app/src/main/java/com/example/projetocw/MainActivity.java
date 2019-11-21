@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
@@ -13,20 +14,29 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+
 import android.view.Menu;
+import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private FragmentManager fragmentManager;
+    //FirebaseAuth mFirebaseAuth;
+    //private  FirebaseAuth.AuthStateListener mAuthStateListener;
+    //FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
 
     public static Intent createIntent(Context context) {
         return new Intent(context, MainActivity.class);
@@ -59,16 +69,44 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+
+
+
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.add(R.id.container_maps , new maps_activity() , "MapsFragment");
         transaction.commit();
 
+        View v = getLayoutInflater().inflate(R.layout.activity_cadastroapos_activity, null);
+
+
     }
 
+    /*
     private void preProcess() {
         Intent intent = getIntent();
-        String uid = intent.getStringExtra("UID");
+        final String uid = mFirebaseAuth.getUid();
+        mFirebaseAuth = FirebaseAuth.getInstance();
+
+        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
+            FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if(mFirebaseUser != null) {
+                    Intent i = new Intent(MainActivity.this,cadastroapos_activity.class);
+                    startActivity(i);
+                }
+                else {
+                    Toast.makeText(MainActivity.this,"Redirecionado" , Toast.LENGTH_SHORT).show();
+                }
+
+
+
+            }
+        };
+
+     */
+
 
         //Verificar se Cadastro existe no firebase
         //se não fez chama a tela de cadastro
@@ -77,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    }
+
 
 
 
@@ -102,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.container_maps , new maps_activity() , "MapsFragment");
         transaction.commit();
+
 
         super.onResume();
     }

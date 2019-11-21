@@ -14,10 +14,14 @@
     <string name="menu_share">Compartilhe</string>
     <string name="menu_send">Sobre Nós</string>
     <string name="title_activity_maps_activity">Map</string>
-    <string name="register">Registre-se</string>
+    <string name="register">Registrar</string>
     <string name="tag">Ajude nos a saber um pouco \nmais sobre você</string>
     <string name="your_name">Nome completo</string>
-    <string name="endereco">Informe seu endereço</string>
+    <string name="cpf">Informe seu CPF</string>
     <string name="dt_nascimento">Informe sua data de nascimento</string>
-    <string name="email">Inform seu email</string>
+    <string name="frase">Cadastre suas informações</string>
+    <string name="email">Insira seu e-mail</string>
+    <string name="senha">Insira sua senha</string>
+    <string name="login">Efetue o Login</string>
+    <string name="entrar">Entrar</string>
 </resources>
