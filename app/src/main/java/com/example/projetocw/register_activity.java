@@ -11,6 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.rtoshiro.util.format.MaskFormatter;
+import com.github.rtoshiro.util.format.SimpleMaskFormatter;
+import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -39,6 +42,13 @@ public class register_activity extends AppCompatActivity {
         cpf = findViewById(R.id.edit_cpf_register);
 
 
+        //Criando mascara para o campo de EditText
+       // SimpleMaskFormatter smf = new SimpleMaskFormatter("NNN.NNN.NNN - NN");
+       // MaskTextWatcher mtw = new MaskTextWatcher(cpf,smf);
+       // cpf.addTextChangedListener(mtw);
+        //Fim da Mascara
+
+
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,6 +56,8 @@ public class register_activity extends AppCompatActivity {
                 String pwd = password.getText().toString();
                 final String ccpf = cpf.getText().toString();
                 final String nome = nome1.getText().toString();
+                final int ppontuacao = 0;
+
 
 
                  if (nome.isEmpty()){
@@ -53,7 +65,7 @@ public class register_activity extends AppCompatActivity {
                     nome1.requestFocus();
                 }
 
-                else if (!isCPF(ccpf) || ccpf.isEmpty()){
+                else if (!isCPF(ccpf)){
                     cpf.setError("CPF invalido");
                     cpf.requestFocus();
                 }
@@ -81,7 +93,7 @@ public class register_activity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<com.google.firebase.auth.AuthResult> task) {
                             if(task.isSuccessful()){
-                                User user = new User(nome,ccpf,email);
+                                User user = new User(nome,ccpf,email,ppontuacao);
                                 FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
