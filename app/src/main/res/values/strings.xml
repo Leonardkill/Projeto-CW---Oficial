@@ -19,13 +19,11 @@
     <string name="your_name">Nome completo</string>
     <string name="cpf">Informe seu CPF</string>
     <string name="dt_nascimento">Informe sua data de nascimento</string>
-<<<<<<< HEAD
     <string name="frase">Cadastre suas informações</string>
     <string name="email">Insira seu e-mail</string>
     <string name="senha">Insira sua senha</string>
     <string name="login">Efetue o Login</string>
     <string name="entrar">Entrar</string>
-=======
-    <string name="email">Informe seu email</string>
->>>>>>> 697f8f7d38f72bd03621572fcc3d8d1c2ab80772
+    <string name="email1">Informe seu email</string>
+
 </resources>
