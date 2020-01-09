@@ -43,9 +43,9 @@ public class register_activity extends AppCompatActivity {
 
 
         //Criando mascara para o campo de EditText
-       // SimpleMaskFormatter smf = new SimpleMaskFormatter("NNN.NNN.NNN - NN");
-       // MaskTextWatcher mtw = new MaskTextWatcher(cpf,smf);
-       // cpf.addTextChangedListener(mtw);
+        // SimpleMaskFormatter smf = new SimpleMaskFormatter("NNN.NNN.NNN - NN");
+        // MaskTextWatcher mtw = new MaskTextWatcher(cpf,smf);
+        // cpf.addTextChangedListener(mtw);
         //Fim da Mascara
 
 
@@ -60,7 +60,7 @@ public class register_activity extends AppCompatActivity {
 
 
 
-                 if (nome.isEmpty()){
+                if (nome.isEmpty()){
                     nome1.setError("Digite seu nome");
                     nome1.requestFocus();
                 }
@@ -99,27 +99,19 @@ public class register_activity extends AppCompatActivity {
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if(task.isSuccessful()){
                                             Toast.makeText(register_activity.this , "Registrado com sucesso" , Toast.LENGTH_LONG).show();
+                                            Intent d = new Intent(register_activity.this,MainActivity.class);
+                                            startActivity(d);
+
                                         }
                                         else {
                                             Toast.makeText(register_activity.this , "Erro ao cadastrar" , Toast.LENGTH_LONG).show();
                                         }
                                     }
                                 });
-
-
-
-
-                                startActivity(new Intent(register_activity.this,MainActivity.class));
                             }
 
                             else {
-
-
-
-
                                 Toast.makeText(register_activity.this , "Não foi possível fazer o registro , por favor tente de novo" , Toast.LENGTH_SHORT).show();
-
-                                startActivity(new Intent(register_activity.this,MainActivity.class));
                             }
                         }
                     });
