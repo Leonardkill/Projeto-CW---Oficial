@@ -19,13 +19,13 @@
 
     <fragment
         android:id="@+id/nav_ranking"
-        android:name="com.example.projetocw.ui.ranking.RankingFragment"
+        android:name="com.example.projetocw.ranking_activity"
         android:label="@string/menu_ranking"
         tools:layout="@layout/fragment_ranking" />
 
     <fragment
         android:id="@+id/nav_usuario"
-        android:name="com.example.projetocw.ui.usuario.UsuarioFragment"
+        android:name="com.example.projetocw.User_infomation_activity"
         android:label="@string/menu_usuario"
         tools:layout="@layout/fragment_usuario" />
 

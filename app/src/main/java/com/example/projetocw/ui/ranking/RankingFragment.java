@@ -23,7 +23,7 @@ public class RankingFragment extends Fragment {
         rankingViewModel =
                 ViewModelProviders.of(this).get(RankingViewModel.class);
         View root = inflater.inflate(R.layout.fragment_ranking, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
+        final TextView textView = root.findViewById(R.id.txt_slideshow);
         rankingViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {

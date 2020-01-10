@@ -102,7 +102,7 @@ public class maps_activity extends SupportMapFragment implements OnMapReadyCallb
         askLocationPermission();
 
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("PontoColeta");
         //Marcadores
 
         Toast.makeText(getContext(), "Iniciando Marcadores", Toast.LENGTH_SHORT).show();
@@ -113,10 +113,14 @@ public class maps_activity extends SupportMapFragment implements OnMapReadyCallb
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    double posicao_latitude = dataSnapshot.child("PontoColeta").child("-LrknSc_4S9joTy0VI0t").child("latitude").getValue(Double.class);
-                    double posicao_longitude = dataSnapshot.child("PontoColeta").child("-LrknSc_4S9joTy0VI0t").child("longitude").getValue(Double.class);
-                    LatLng tucuruvi = new LatLng(posicao_latitude, posicao_longitude);
-                    mMap.addMarker(new MarkerOptions().position(tucuruvi).title("Marcador Tucuruvi"));
+
+                    for (DataSnapshot data: dataSnapshot.getChildren()){
+                        PontoColeta ponto = data.getValue(PontoColeta.class);
+                        String titulo = String.format("Ponto Coleta %s", ponto.getNomePontoColeta());
+                        LatLng latLng = new LatLng(ponto.getLatitude(), ponto.getLongitude());
+                        mMap.addMarker(new MarkerOptions().position(latLng).title(titulo));
+                    }
+
                 } else {
                     Log.e(TAG, "onDataChange: no Data");
                 }

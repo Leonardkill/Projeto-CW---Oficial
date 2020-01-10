@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gelo">
+
+
+    <TableRow
+        android:layout_height="60dp"
+        android:layout_width="fill_parent"
+
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_marginTop="-17dp"
+            android:layout_marginBottom="-17dp"
+            android:drawableLeft="@drawable/usuario_icone_verde2"
+            android:text=" Posição do Usuário :"
+
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:background="@color/gelo"
+            android:textColor="#000000"
+            android:padding="15dip"
+            android:gravity="top"/>
+
+        <TextView
+
+            android:id="@+id/TextView02"
+            android:layout_marginTop="-17dp"
+            android:layout_marginBottom="-17dp"
+            android:text="Pontuação :"
+            android:layout_weight="1.5"
+            android:textSize="18sp"
+            android:background="@color/gelo"
+            android:textColor="#000000"
+            android:padding="15dip"
+            android:gravity="top"/>
+    </TableRow>
+
+    <TextView
+        android:id="@+id/itemViewNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Line 1 "
+        android:gravity="bottom"
+
+        android:layout_marginBottom="10dp"
+
+        android:textColor="@color/preto"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:textSize="19sp"
+        />
+
+    <TextView
+        android:id="@+id/itemViewPonto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/preto"
+        android:layout_marginRight="16dp"
+        android:textSize="18sp"
+        android:layout_alignParentRight="true" />
+
+
+</RelativeLayout>
