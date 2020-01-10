@@ -20,7 +20,7 @@ public class RankingFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        rankingViewModel =
+        /*rankingViewModel =
                 ViewModelProviders.of(this).get(RankingViewModel.class);
         View root = inflater.inflate(R.layout.fragment_ranking, container, false);
         final TextView textView = root.findViewById(R.id.txt_slideshow);
@@ -30,6 +30,7 @@ public class RankingFragment extends Fragment {
                 textView.setText(s);
             }
         });
-        return root;
+        return root;*/
+        return null;
     }
 }

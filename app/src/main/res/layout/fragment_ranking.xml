@@ -6,6 +6,7 @@
     android:orientation="vertical"
     tools:context=".ranking_activity">
 
+<<<<<<< HEAD
 
 
 
@@ -30,5 +31,11 @@
     </LinearLayout>
 
 
+=======
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lstPontuacao"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+>>>>>>> ed053b749a42ec34174f31d36062ede06fba9b22
 
 </LinearLayout>

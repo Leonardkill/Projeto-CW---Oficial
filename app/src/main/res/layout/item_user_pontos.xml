@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -40,34 +41,53 @@
             android:padding="15dip"
             android:gravity="top"/>
     </TableRow>
+=======
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+>>>>>>> ed053b749a42ec34174f31d36062ede06fba9b22
 
     <TextView
         android:id="@+id/itemViewNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         tools:text="Line 1 "
         android:gravity="bottom"
 
         android:layout_marginBottom="10dp"
 
         android:textColor="@color/preto"
+=======
+        tools:text="Line 1"
+>>>>>>> ed053b749a42ec34174f31d36062ede06fba9b22
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
+<<<<<<< HEAD
         android:layout_marginTop="20dp"
         android:textSize="19sp"
         />
+=======
+        android:layout_marginTop="16dp"/>
+>>>>>>> ed053b749a42ec34174f31d36062ede06fba9b22
 
     <TextView
         android:id="@+id/itemViewPonto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:textColor="@color/preto"
         android:layout_marginRight="16dp"
         android:textSize="18sp"
         android:layout_alignParentRight="true" />
 
 
+=======
+        android:layout_marginRight="16dp"
+        android:layout_alignParentRight="true" />
+
+>>>>>>> ed053b749a42ec34174f31d36062ede06fba9b22
 </RelativeLayout>

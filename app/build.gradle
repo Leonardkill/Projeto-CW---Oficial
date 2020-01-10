@@ -41,6 +41,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:19.2.0'
     implementation 'com.karumi:dexter:6.0.0'
     implementation 'com.github.rtoshiro.mflibrary:mflibrary:1.0.0'
+
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
